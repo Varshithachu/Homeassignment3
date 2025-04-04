@@ -71,5 +71,29 @@ Temperature helps balance between creativity and accuracy in generated text.
 Run the notebook with:
 jupyter notebook "Text_Generation_RNN.ipynb"
 
+# Sentiment Classification Using LSTM (IMDB Reviews)
+#Introduction
+This notebook demonstrates how to use LSTM-based RNNs for binary sentiment classification using the IMDB movie review dataset. The model is trained to determine whether a review is positive or negative based on its text content.
+#Requirements
+pip install tensorflow scikit-learn matplotlib seaborn
+#Code Overview
+Dataset Loading: The IMDB dataset is pre-tokenized and limited to the top 10,000 most frequent words.
+Preprocessing: Reviews are padded to a fixed length (200 words) for uniform input size.
+Model Architecture:
+Embedding layer to convert integers to word vectors.
+LSTM layer with 64 units.
+Output layer with sigmoid activation for binary classification.
+Training: Binary cross-entropy loss with Adam optimizer is used.
+Evaluation:
+A confusion matrix shows the count of true vs predicted classes.
+A classification report includes precision, recall, F1-score, and accuracy.
+#Precision vs. Recall Tradeoff
+In sentiment classification:
+Precision ensures that when the model predicts "positive", it's usually correct. This is crucial when false positives are costly (e.g., auto-approving user reviews).
+Recall ensures that most actual positives are identified, which is important when missing true positives is more critical (e.g., detecting negative feedback).
+The F1-score balances both, offering a better metric when there’s a class imbalance.
+#Usage
+jupyter notebook "Sentiment_Classification_LSTM.ipynb"
+
 
 
