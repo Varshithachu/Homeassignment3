@@ -1,5 +1,5 @@
 # Homeassignment3
-#Autoencoder for Image Reconstruction
+# Autoencoder for Image Reconstruction
 #Introduction
 This project demonstrates how to implement a fully connected autoencoder using TensorFlow and Keras. The autoencoder learns to compress and then reconstruct images from the MNIST dataset. It is a classic application of unsupervised learning for dimensionality reduction and feature learning.
 #Requirements
@@ -26,7 +26,7 @@ fit() – Trains the model on input data.
 matplotlib.pyplot – Visualizes original vs reconstructed images.
 
 
-#Denoising Autoencoder for Image Reconstruction
+# Denoising Autoencoder for Image Reconstruction
 #Introduction
 This project demonstrates a denoising autoencoder that learns to reconstruct clean images from noisy inputs. This technique is useful for learning robust data representations and removing noise from corrupted inputs.
 #Requirements
@@ -47,3 +47,29 @@ fit() – Trains the autoencoder on noisy data.
 matplotlib.pyplot – Used to visualize results.
 #Usage
 jupyter notebook "Denoising_Autoencoder.ipynb"
+
+# RNN for Character-Level Text Generation
+#Introduction
+This notebook builds a Recurrent Neural Network (RNN) using LSTM layers to generate text. The model learns to predict the next character in a sequence using Shakespeare's text and is capable of generating new, similar-sounding text after training.
+#Requirements
+Install necessary dependencies:
+pip install numpy tensorflow
+#Code Overview
+Dataset Loading: Downloads Shakespeare’s complete works from TensorFlow Datasets.
+Preprocessing: Converts text into one-hot encoded character sequences.
+Model Architecture:
+LSTM with 128 units.
+Dense layer with softmax activation for next-character prediction.
+Training: Uses categorical cross-entropy loss and the Adam optimizer.
+Generation: Predicts the next character iteratively using a helper function and adjustable temperature parameter.
+#Temperature Scaling
+Temperature controls the randomness of predictions during sampling:
+Low (e.g., 0.2): More predictable and repetitive output.
+High (e.g., 1.0): More creative and diverse, but less coherent output.
+Temperature helps balance between creativity and accuracy in generated text.
+#Usage
+Run the notebook with:
+jupyter notebook "Text_Generation_RNN.ipynb"
+
+
+
